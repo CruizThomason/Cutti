@@ -7,21 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E1377BDF208AC1D900874D50 /* Client.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1377BDE208AC1D900874D50 /* Client.storyboard */; };
+		E1377BE2208AC21B00874D50 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1377BE1208AC21B00874D50 /* CloudKitManager.swift */; };
 		E1B520EB208ABE4F0045F739 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B520EA208ABE4F0045F739 /* AppDelegate.swift */; };
-		E1B520ED208ABE4F0045F739 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B520EC208ABE4F0045F739 /* ViewController.swift */; };
-		E1B520F0208ABE4F0045F739 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B520EE208ABE4F0045F739 /* Main.storyboard */; };
 		E1B520F2208ABE510045F739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1B520F1208ABE510045F739 /* Assets.xcassets */; };
 		E1B520F5208ABE510045F739 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B520F3208ABE510045F739 /* LaunchScreen.storyboard */; };
+		E1B520FF208ABE720045F739 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B520FE208ABE720045F739 /* CloudKit.framework */; };
+		E1B52101208ABE930045F739 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B52100208ABE930045F739 /* Main.storyboard */; };
+		E1B52103208ABF140045F739 /* Barber.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B52102208ABF140045F739 /* Barber.swift */; };
+		E1B5210A208AC0BC0045F739 /* BarberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B52109208AC0BC0045F739 /* BarberController.swift */; };
+		E1B5210C208AC0C70045F739 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B5210B208AC0C70045F739 /* Client.swift */; };
+		E1B5210E208AC0D30045F739 /* ClientController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B5210D208AC0D30045F739 /* ClientController.swift */; };
+		E1B52110208AC0E90045F739 /* ClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B5210F208AC0E90045F739 /* ClientViewController.swift */; };
+		E1B52112208AC0F30045F739 /* BarberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B52111208AC0F30045F739 /* BarberViewController.swift */; };
+		E1B52114208AC1200045F739 /* Barber.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B52113208AC1200045F739 /* Barber.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E1377BDE208AC1D900874D50 /* Client.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Client.storyboard; sourceTree = "<group>"; };
+		E1377BE1208AC21B00874D50 /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		E1B520E7208ABE4F0045F739 /* Cutti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cutti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B520EA208ABE4F0045F739 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E1B520EC208ABE4F0045F739 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E1B520EF208ABE4F0045F739 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1B520F1208ABE510045F739 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1B520F4208ABE510045F739 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1B520F6208ABE510045F739 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1B520FC208ABE6D0045F739 /* Cutti.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cutti.entitlements; sourceTree = "<group>"; };
+		E1B520FE208ABE720045F739 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		E1B52100208ABE930045F739 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E1B52102208ABF140045F739 /* Barber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barber.swift; sourceTree = "<group>"; };
+		E1B52109208AC0BC0045F739 /* BarberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberController.swift; sourceTree = "<group>"; };
+		E1B5210B208AC0C70045F739 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		E1B5210D208AC0D30045F739 /* ClientController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientController.swift; sourceTree = "<group>"; };
+		E1B5210F208AC0E90045F739 /* ClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViewController.swift; sourceTree = "<group>"; };
+		E1B52111208AC0F30045F739 /* BarberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberViewController.swift; sourceTree = "<group>"; };
+		E1B52113208AC1200045F739 /* Barber.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Barber.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +48,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1B520FF208ABE720045F739 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E1377BE0208AC20400874D50 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E1377BE1208AC21B00874D50 /* CloudKitManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		E1B520DE208ABE4F0045F739 = {
 			isa = PBXGroup;
 			children = (
 				E1B520E9208ABE4F0045F739 /* Cutti */,
 				E1B520E8208ABE4F0045F739 /* Products */,
+				E1B520FD208ABE720045F739 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +83,71 @@
 		E1B520E9208ABE4F0045F739 /* Cutti */ = {
 			isa = PBXGroup;
 			children = (
+				E1B520FC208ABE6D0045F739 /* Cutti.entitlements */,
+				E1B52107208AC0870045F739 /* UI */,
+				E1B52106208AC0810045F739 /* View Controller */,
+				E1B52105208AC07B0045F739 /* Model Controller */,
+				E1B52104208AC0750045F739 /* Model */,
+				E1377BE0208AC20400874D50 /* Helpers */,
+				E1B52108208AC0990045F739 /* Resources */,
+			);
+			path = Cutti;
+			sourceTree = "<group>";
+		};
+		E1B520FD208ABE720045F739 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1B520FE208ABE720045F739 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1B52104208AC0750045F739 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E1B52102208ABF140045F739 /* Barber.swift */,
+				E1B5210B208AC0C70045F739 /* Client.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E1B52105208AC07B0045F739 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E1B52109208AC0BC0045F739 /* BarberController.swift */,
+				E1B5210D208AC0D30045F739 /* ClientController.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		E1B52106208AC0810045F739 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E1B5210F208AC0E90045F739 /* ClientViewController.swift */,
+				E1B52111208AC0F30045F739 /* BarberViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		E1B52107208AC0870045F739 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E1B52100208ABE930045F739 /* Main.storyboard */,
+				E1B52113208AC1200045F739 /* Barber.storyboard */,
+				E1377BDE208AC1D900874D50 /* Client.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		E1B52108208AC0990045F739 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				E1B520EA208ABE4F0045F739 /* AppDelegate.swift */,
-				E1B520EC208ABE4F0045F739 /* ViewController.swift */,
-				E1B520EE208ABE4F0045F739 /* Main.storyboard */,
 				E1B520F1208ABE510045F739 /* Assets.xcassets */,
 				E1B520F3208ABE510045F739 /* LaunchScreen.storyboard */,
 				E1B520F6208ABE510045F739 /* Info.plist */,
 			);
-			path = Cutti;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +182,14 @@
 				TargetAttributes = {
 					E1B520E6208ABE4F0045F739 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -122,9 +216,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1B52101208ABE930045F739 /* Main.storyboard in Resources */,
 				E1B520F5208ABE510045F739 /* LaunchScreen.storyboard in Resources */,
+				E1B52114208AC1200045F739 /* Barber.storyboard in Resources */,
+				E1377BDF208AC1D900874D50 /* Client.storyboard in Resources */,
 				E1B520F2208ABE510045F739 /* Assets.xcassets in Resources */,
-				E1B520F0208ABE4F0045F739 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,22 +231,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1B520ED208ABE4F0045F739 /* ViewController.swift in Sources */,
 				E1B520EB208ABE4F0045F739 /* AppDelegate.swift in Sources */,
+				E1B5210A208AC0BC0045F739 /* BarberController.swift in Sources */,
+				E1377BE2208AC21B00874D50 /* CloudKitManager.swift in Sources */,
+				E1B52112208AC0F30045F739 /* BarberViewController.swift in Sources */,
+				E1B5210E208AC0D30045F739 /* ClientController.swift in Sources */,
+				E1B5210C208AC0C70045F739 /* Client.swift in Sources */,
+				E1B52103208ABF140045F739 /* Barber.swift in Sources */,
+				E1B52110208AC0E90045F739 /* ClientViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E1B520EE208ABE4F0045F739 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E1B520EF208ABE4F0045F739 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E1B520F3208ABE510045F739 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -280,9 +374,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Cutti/Cutti.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77T5A89VWP;
-				INFOPLIST_FILE = Cutti/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Cutti/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -298,9 +393,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Cutti/Cutti.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77T5A89VWP;
-				INFOPLIST_FILE = Cutti/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Cutti/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
