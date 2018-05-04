@@ -13,6 +13,10 @@ class ClientController {
     
     static let shared = ClientController()
     
+     
+    
+    let publicDatabase = CKContainer.default().publicCloudDatabase
+    
     let cloudKitManager: CloudKitManager = {
         return CloudKitManager()
     }()
@@ -27,14 +31,14 @@ class ClientController {
         }
     }
     
-    func createClientWith(username: String, email: String, completion: @escaping (_ success: Bool) -> Void) {
+    func createClientWith(username: String, email: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
         
         CKContainer.default().fetchUserRecordID { (appleUsersRecordID, error) in
             guard let appleUsersRecordID = appleUsersRecordID else { return }
             
             let appleUserRef = CKReference(recordID: appleUsersRecordID, action: .deleteSelf)
             
-            let client = Client(username: username, email: email, appleUserRef: appleUserRef)
+            let client = Client(username: username, email: email, appleUserRef: appleUserRef, password: password)
             
             let clientRecord = CKRecord(client: client)
             
@@ -91,6 +95,23 @@ class ClientController {
             completion(true)
         }
         CKContainer.default().publicCloudDatabase.add(op)
+    }
+    
+    func searchForBarbersWith(searchTerm: String, completion: @escaping ([Barber]) -> Void) {
+        let predicate = NSPredicate(value: true)
+        // Make a predicate to fetch only barbers whose names contain this search term
+        cloudKitManager.fetchRecordsOf(type: Barber.recordTypeKey, database: publicDatabase) { (records, errpr) in
+            guard let records = records else { return }
+            
+            let barbers = records.compactMap({Barber(cloudKitRecord: $0)})
+            completion(barbers)
+        }
+        
+        // Perform the query on the right database (probably public?)
+        
+        // In the completion of the query, turn the records you get back into barbers
+        
+        // Call completion with the array of barbers you just made in the last step
     }
 }
 

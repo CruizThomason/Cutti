@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		E1377BDF208AC1D900874D50 /* Client.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1377BDE208AC1D900874D50 /* Client.storyboard */; };
 		E1377BE2208AC21B00874D50 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1377BE1208AC21B00874D50 /* CloudKitManager.swift */; };
+		E152D0CE209BAA0E001CAC35 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152D0CD209BAA0E001CAC35 /* SignUpViewController.swift */; };
+		E152D0D0209BC615001CAC35 /* ShiftableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152D0CF209BC615001CAC35 /* ShiftableViewController.swift */; };
+		E152D0D3209D0E6E001CAC35 /* ClientAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152D0D2209D0E6E001CAC35 /* ClientAppointmentViewController.swift */; };
+		E16E06AA2097705700EF212D /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16E06A92097705700EF212D /* SearchTableViewController.swift */; };
+		E16E06AC2097706300EF212D /* SearchDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16E06AB2097706300EF212D /* SearchDetailTableViewController.swift */; };
+		E16E06AE20977A7700EF212D /* ClientProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16E06AD20977A7700EF212D /* ClientProfileViewController.swift */; };
+		E18D9E08208FA9930004D9F8 /* BarberProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18D9E07208FA9930004D9F8 /* BarberProfileViewController.swift */; };
+		E18D9E0C208FE1130004D9F8 /* BarberAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18D9E0B208FE1130004D9F8 /* BarberAppointmentViewController.swift */; };
 		E1B520EB208ABE4F0045F739 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B520EA208ABE4F0045F739 /* AppDelegate.swift */; };
 		E1B520F2208ABE510045F739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1B520F1208ABE510045F739 /* Assets.xcassets */; };
 		E1B520F5208ABE510045F739 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B520F3208ABE510045F739 /* LaunchScreen.storyboard */; };
@@ -18,14 +26,21 @@
 		E1B5210A208AC0BC0045F739 /* BarberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B52109208AC0BC0045F739 /* BarberController.swift */; };
 		E1B5210C208AC0C70045F739 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B5210B208AC0C70045F739 /* Client.swift */; };
 		E1B5210E208AC0D30045F739 /* ClientController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B5210D208AC0D30045F739 /* ClientController.swift */; };
-		E1B52110208AC0E90045F739 /* ClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B5210F208AC0E90045F739 /* ClientViewController.swift */; };
-		E1B52112208AC0F30045F739 /* BarberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B52111208AC0F30045F739 /* BarberViewController.swift */; };
+		E1B52112208AC0F30045F739 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B52111208AC0F30045F739 /* LoginViewController.swift */; };
 		E1B52114208AC1200045F739 /* Barber.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B52113208AC1200045F739 /* Barber.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E1377BDE208AC1D900874D50 /* Client.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Client.storyboard; sourceTree = "<group>"; };
 		E1377BE1208AC21B00874D50 /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
+		E152D0CD209BAA0E001CAC35 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		E152D0CF209BC615001CAC35 /* ShiftableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftableViewController.swift; sourceTree = "<group>"; };
+		E152D0D2209D0E6E001CAC35 /* ClientAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientAppointmentViewController.swift; sourceTree = "<group>"; };
+		E16E06A92097705700EF212D /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		E16E06AB2097706300EF212D /* SearchDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailTableViewController.swift; sourceTree = "<group>"; };
+		E16E06AD20977A7700EF212D /* ClientProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProfileViewController.swift; sourceTree = "<group>"; };
+		E18D9E07208FA9930004D9F8 /* BarberProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberProfileViewController.swift; sourceTree = "<group>"; };
+		E18D9E0B208FE1130004D9F8 /* BarberAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberAppointmentViewController.swift; sourceTree = "<group>"; };
 		E1B520E7208ABE4F0045F739 /* Cutti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cutti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B520EA208ABE4F0045F739 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1B520F1208ABE510045F739 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,8 +53,7 @@
 		E1B52109208AC0BC0045F739 /* BarberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberController.swift; sourceTree = "<group>"; };
 		E1B5210B208AC0C70045F739 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		E1B5210D208AC0D30045F739 /* ClientController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientController.swift; sourceTree = "<group>"; };
-		E1B5210F208AC0E90045F739 /* ClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViewController.swift; sourceTree = "<group>"; };
-		E1B52111208AC0F30045F739 /* BarberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberViewController.swift; sourceTree = "<group>"; };
+		E1B52111208AC0F30045F739 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E1B52113208AC1200045F739 /* Barber.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Barber.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +75,24 @@
 				E1377BE1208AC21B00874D50 /* CloudKitManager.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E152D0D1209D0DB4001CAC35 /* Barber View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E18D9E0B208FE1130004D9F8 /* BarberAppointmentViewController.swift */,
+				E18D9E07208FA9930004D9F8 /* BarberProfileViewController.swift */,
+			);
+			path = "Barber View Controllers";
+			sourceTree = "<group>";
+		};
+		E152D0D4209D0E78001CAC35 /* Client View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E16E06AD20977A7700EF212D /* ClientProfileViewController.swift */,
+				E152D0D2209D0E6E001CAC35 /* ClientAppointmentViewController.swift */,
+			);
+			path = "Client View Controllers";
 			sourceTree = "<group>";
 		};
 		E1B520DE208ABE4F0045F739 = {
@@ -86,6 +118,8 @@
 				E1B520FC208ABE6D0045F739 /* Cutti.entitlements */,
 				E1B52107208AC0870045F739 /* UI */,
 				E1B52106208AC0810045F739 /* View Controller */,
+				E152D0D1209D0DB4001CAC35 /* Barber View Controllers */,
+				E152D0D4209D0E78001CAC35 /* Client View Controllers */,
 				E1B52105208AC07B0045F739 /* Model Controller */,
 				E1B52104208AC0750045F739 /* Model */,
 				E1377BE0208AC20400874D50 /* Helpers */,
@@ -123,8 +157,11 @@
 		E1B52106208AC0810045F739 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E1B5210F208AC0E90045F739 /* ClientViewController.swift */,
-				E1B52111208AC0F30045F739 /* BarberViewController.swift */,
+				E152D0CF209BC615001CAC35 /* ShiftableViewController.swift */,
+				E1B52111208AC0F30045F739 /* LoginViewController.swift */,
+				E152D0CD209BAA0E001CAC35 /* SignUpViewController.swift */,
+				E16E06A92097705700EF212D /* SearchTableViewController.swift */,
+				E16E06AB2097706300EF212D /* SearchDetailTableViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -231,14 +268,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E16E06AC2097706300EF212D /* SearchDetailTableViewController.swift in Sources */,
+				E152D0D0209BC615001CAC35 /* ShiftableViewController.swift in Sources */,
 				E1B520EB208ABE4F0045F739 /* AppDelegate.swift in Sources */,
 				E1B5210A208AC0BC0045F739 /* BarberController.swift in Sources */,
+				E18D9E0C208FE1130004D9F8 /* BarberAppointmentViewController.swift in Sources */,
+				E18D9E08208FA9930004D9F8 /* BarberProfileViewController.swift in Sources */,
 				E1377BE2208AC21B00874D50 /* CloudKitManager.swift in Sources */,
-				E1B52112208AC0F30045F739 /* BarberViewController.swift in Sources */,
+				E1B52112208AC0F30045F739 /* LoginViewController.swift in Sources */,
 				E1B5210E208AC0D30045F739 /* ClientController.swift in Sources */,
 				E1B5210C208AC0C70045F739 /* Client.swift in Sources */,
+				E16E06AA2097705700EF212D /* SearchTableViewController.swift in Sources */,
+				E152D0CE209BAA0E001CAC35 /* SignUpViewController.swift in Sources */,
+				E16E06AE20977A7700EF212D /* ClientProfileViewController.swift in Sources */,
+				E152D0D3209D0E6E001CAC35 /* ClientAppointmentViewController.swift in Sources */,
 				E1B52103208ABF140045F739 /* Barber.swift in Sources */,
-				E1B52110208AC0E90045F739 /* ClientViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

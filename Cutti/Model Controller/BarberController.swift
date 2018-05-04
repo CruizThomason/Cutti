@@ -8,10 +8,13 @@
 
 import Foundation
 import CloudKit
+import MapKit
 
 class BarberController {
     
     static let shared = BarberController()
+    
+    var barbers: [Barber] = []
     
     let cloudKitManager: CloudKitManager = {
         return CloudKitManager()
@@ -19,21 +22,15 @@ class BarberController {
     
     let currentBarberWasSetNotification = Notification.Name("currentBarberWasSet")
     
-    var currentBarber: Barber? {
-        didSet {
-            DispatchQueue.main.async {
-                NotificationCenter.default.post(name: self.currentBarberWasSetNotification, object: nil)
-            }
-        }
-    }
+    var currentBarber: Barber? 
     
-    func createBarberWith(username: String, email: String, completion: @escaping (_ success: Bool) -> Void) {
+    func createBarberWith(username: String, email: String, latitude: Double, longitude: Double, password: String, completion: @escaping (_ success: Bool) -> Void) {
         CKContainer.default().fetchUserRecordID { (appleUsersRecordID, error) in
             guard let appleUsersRecordID = appleUsersRecordID else { return }
             
             let appleUserRef = CKReference(recordID: appleUsersRecordID, action: .deleteSelf)
             
-            let barber = Barber(username: username, email: email, appleUserRef: appleUserRef)
+            let barber = Barber(username: username, email: email, appleUserRef: appleUserRef, latitude: latitude, longitude: longitude, password: password)
             
             let barberRecord = CKRecord(barber: barber)
             
@@ -45,6 +42,22 @@ class BarberController {
                 self.currentBarber = currentBarber
                 completion(true)
             }
+        }
+    }
+    
+    func fetchBarberWithEmailPassword(email: String, password: String, completion: @escaping (Bool) -> Void) {
+        let predicate = NSPredicate(format: "email == %@", email)
+        let predicate2 = NSPredicate(format: "password == %@", password)
+        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate, predicate2])
+        
+        let query = CKQuery(recordType: Barber.recordTypeKey, predicate: compoundPredicate)
+        CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
+            if let error = error { print(error.localizedDescription) }
+            guard let firstRecord = records?.first else { completion(false); return }
+            let barber = Barber(cloudKitRecord: firstRecord)
+            self.currentBarber = barber
+            
+            completion(true)
         }
     }
     
@@ -89,6 +102,57 @@ class BarberController {
             completion(true)
         }
         CKContainer.default().publicCloudDatabase.add(op)
+    }
+    
+    func fetchAllNearbyBarbersWith(userLocation: CLLocation, span: MKCoordinateSpan, completion: @escaping () -> Void) {
+        
+        //This is the farthest Lat point to the left
+        let farthestLeft = userLocation.coordinate.latitude + span.latitudeDelta
+        //This is the farthest Lat point to the right
+        let farthestRight = userLocation.coordinate.latitude - span.latitudeDelta
+        //This is the farthest Long point to the top
+        let farthestTop = userLocation.coordinate.longitude + span.longitudeDelta
+        //This is the farthest Long point to the bottom
+        let farthestBottom = userLocation.coordinate.longitude - span.longitudeDelta
+
+        let predicate1 = NSPredicate(format: "latitude < %lf", farthestLeft)
+        let predicate2 = NSPredicate(format: "latitude > %lf", farthestRight)
+        let predicate3 = NSPredicate(format: "longitude < %lf", farthestTop)
+        let predicate4 = NSPredicate(format: "longitude > %lf", farthestBottom)
+
+        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2, predicate3, predicate4])
+        
+        let query = CKQuery(recordType: Barber.recordTypeKey, predicate: compoundPredicate)
+        
+        let ckQueryOperation = CKQueryOperation(query: query)
+        
+        var records: [CKRecord] = []
+        
+        ckQueryOperation.recordFetchedBlock = { (record) in
+            records.append(record)
+        }
+        
+        ckQueryOperation.queryCompletionBlock = { (_, error) in
+            
+            
+            if let error = error { print("Error fetching barbers for location: \(error)") }
+            
+            var barbers: [Barber] = []
+            
+            // This does the same thing as the for-in loop
+            
+            //            let barbers = records.compactMap({ Barber(cloudKitRecord: $0)})
+            
+            for barberRecord in records {
+                guard let barber = Barber(cloudKitRecord: barberRecord) else { continue }
+                barbers.append(barber)
+            }
+            
+            self.barbers = barbers
+            // This is Jade telling you to take out the pizza
+            completion()
+        }
+        CKContainer.default().publicCloudDatabase.add(ckQueryOperation)
     }
 }
 
