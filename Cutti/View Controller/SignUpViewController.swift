@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class SignUpViewController: ShiftableViewController, CLLocationManagerDelegate {
+class SignUpViewController: ShiftableViewController, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var usernameTextField: UITextField!
@@ -19,6 +19,7 @@ class SignUpViewController: ShiftableViewController, CLLocationManagerDelegate {
     @IBOutlet weak var addressForBusinessTextField: UITextField!
     @IBOutlet weak var nameOfBusinessTextField: UITextField!
     @IBOutlet weak var barberProfileImage: UIImageView!
+    @IBOutlet weak var photoSignUpButton: UIButton!
     
     
     var locationManager = CLLocationManager()
@@ -40,7 +41,49 @@ class SignUpViewController: ShiftableViewController, CLLocationManagerDelegate {
         
     }
     @IBAction func barberProfileImage(_ sender: Any) {
+        // Make the image picker controller (UIImagePickerController)
         
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        // Make a UIAlertController that will give the user the option to choose whether they want to access the photo library or the camera
+        let alert = UIAlertController(title: "Take a photo or Choose one from Photo Library", message: "You need to take a picture or choose one from photo library.", preferredStyle: .actionSheet)
+        
+        // Check to see if the photo library is available, and if it is, then make a UIAlertAction that will present the image picker that goes to the photo library using the sourceType property on the image picker
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) == true {
+            
+            let photoLibraryAction = UIAlertAction.init(title: "Photo Library", style: .default) { (_) in
+                
+                imagePicker.sourceType = .photoLibrary
+                
+                self.present(imagePicker, animated: true, completion: nil)
+            }
+            
+            alert.addAction(photoLibraryAction)
+            
+        }
+        
+        // Check to see if the camera is available, and if it is, then make a UIAlertAction that will present the image picker that goes to the camera using the sourceType property on the image picker
+        
+        let cameraAction = UIAlertAction.init(title: "Access Camera", style: .default) { (_) in
+            
+            imagePicker.sourceType = .camera
+            
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        alert.addAction(cameraAction)
+        
+        // Make a dismiss or cancel UIAlertAction
+        let dismissAction = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
+
+        alert.addAction(dismissAction)
+        // Present the alert controller
+        present(alert, animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        photoSignUpButton.setTitle("", for: .normal)
+        let Image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        barberProfileImage.image = Image
     }
     
     @IBAction func yesButtonTapped(_ sender: Any) {
@@ -70,6 +113,12 @@ class SignUpViewController: ShiftableViewController, CLLocationManagerDelegate {
             return
         }
         
+        var photoData: Data?
+        
+        
+        if let profileImage = barberProfileImage.image {
+        photoData = UIImagePNGRepresentation(profileImage)
+        }
         activityIndicator.startAnimating()
         
         guard let location = currentLocation else { return }
@@ -77,7 +126,7 @@ class SignUpViewController: ShiftableViewController, CLLocationManagerDelegate {
         if isABarber {
             
             
-            BarberController.shared.createBarberWith(username: username, email: email, latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, password: password) { (success) in
+            BarberController.shared.createBarberWith(username: username, email: email, latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, password: password, photoData: photoData) { (success) in
                 
                 DispatchQueue.main.async {
                     if !success {
@@ -144,6 +193,7 @@ class SignUpViewController: ShiftableViewController, CLLocationManagerDelegate {
         
         self.present(alert, animated: true, completion: nil)
     }
+    
     
     /*
      // MARK: - Navigation

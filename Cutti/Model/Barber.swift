@@ -18,6 +18,7 @@ class Barber {
     fileprivate let longitudeKey = "longitude"
     fileprivate let passwordKey = "password"
     static let recordTypeKey = "Barber"
+    fileprivate let photoDataKey = "photoData"
     
     
     var username: String
@@ -25,18 +26,20 @@ class Barber {
     var latitude: Double
     var longitude: Double
     var password: String
+    var photoData: Data?
     
     let appleUserRef: CKReference
     
     var cloudKitRecordID: CKRecordID?
     
-    init(username: String, email: String, appleUserRef: CKReference, latitude: Double, longitude: Double, password: String) {
+    init(username: String, email: String, appleUserRef: CKReference, latitude: Double, longitude: Double, password: String, photoData: Data?) {
         self.username = username
         self.email = email
         self.appleUserRef = appleUserRef
         self.latitude = latitude
         self.longitude = longitude
         self.password = password
+        self.photoData = photoData
     }
     
     init?(cloudKitRecord: CKRecord) {
@@ -46,8 +49,12 @@ class Barber {
         // Add latitude and longitude here
             let latitude = cloudKitRecord[latitudeKey] as? Double,
             let longitude = cloudKitRecord[longitudeKey] as? Double,
-            let password = cloudKitRecord[passwordKey] as? String
+            let password = cloudKitRecord[passwordKey] as? String,
+            let photoDataAsset = cloudKitRecord[photoDataKey] as? CKAsset
             else { return nil }
+        
+        
+        let photoData = try? Data(contentsOf: photoDataAsset.fileURL)
         
         self.username = username
         self.email = email
@@ -56,6 +63,19 @@ class Barber {
         self.latitude = latitude
         self.longitude = longitude
         self.password = password
+        self.photoData = photoData
+    }
+    fileprivate var temporaryPhotoURL: URL {
+        
+        // Must write to temporary directory to be able to pass image file path url to CKAsset
+        
+        let temporaryDirectory = NSTemporaryDirectory()
+        let temporaryDirectoryURL = URL(fileURLWithPath: temporaryDirectory)
+        let fileURL = temporaryDirectoryURL.appendingPathComponent(UUID().uuidString).appendingPathExtension("jpg")
+        
+        try? photoData?.write(to: fileURL, options: [.atomic])
+        
+        return fileURL
     }
 }
 
@@ -74,6 +94,12 @@ extension CKRecord {
         self.setValue(barber.latitude, forKey: barber.latitudeKey)
         self.setValue(barber.longitude, forKey: barber.longitudeKey)
         self.setValue(barber.password, forKey: barber.passwordKey)
+        self.setValue(barber.photoData, forKey: barber.photoDataKey)
+        
+        if barber.photoData != nil {
+            let asset = CKAsset(fileURL: barber.temporaryPhotoURL)
+            self.setValue(asset, forKey: barber.photoDataKey)
+        }
     }
 }
 

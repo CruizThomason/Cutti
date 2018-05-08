@@ -171,6 +171,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Co-dA-bA2">
                                 <rect key="frame" x="70" y="84" width="235" height="128"/>
+                                <state key="normal" title="Add a Photo"/>
                                 <connections>
                                     <action selector="barberProfileImage:" destination="Ov0-Ao-cY6" eventType="touchUpInside" id="Mwz-fB-c1t"/>
                                 </connections>
@@ -179,18 +180,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KAp-Pg-dxZ" firstAttribute="leading" secondItem="dkU-zh-RcV" secondAttribute="leading" constant="177" id="03b-Zl-gjg"/>
-                            <constraint firstItem="3Co-dA-bA2" firstAttribute="top" secondItem="dkU-zh-RcV" secondAttribute="top" constant="64" id="20j-SM-SzW"/>
                             <constraint firstItem="GdP-a5-abl" firstAttribute="top" secondItem="dkU-zh-RcV" secondAttribute="top" constant="64" id="6rN-Xy-ac1"/>
-                            <constraint firstItem="3Co-dA-bA2" firstAttribute="leading" secondItem="dkU-zh-RcV" secondAttribute="leading" constant="70" id="BfC-V3-K3V"/>
+                            <constraint firstItem="3Co-dA-bA2" firstAttribute="top" secondItem="GdP-a5-abl" secondAttribute="top" id="78O-bd-KpZ"/>
                             <constraint firstItem="KAp-Pg-dxZ" firstAttribute="top" secondItem="dkU-zh-RcV" secondAttribute="top" constant="219" id="EWu-KH-b56"/>
                             <constraint firstItem="OoJ-JS-An3" firstAttribute="top" secondItem="KAp-Pg-dxZ" secondAttribute="bottom" constant="8.5" id="ISs-zS-4XG"/>
+                            <constraint firstItem="3Co-dA-bA2" firstAttribute="trailing" secondItem="GdP-a5-abl" secondAttribute="trailing" id="Ibz-JH-khc"/>
                             <constraint firstItem="dkU-zh-RcV" firstAttribute="trailing" secondItem="KAp-Pg-dxZ" secondAttribute="trailing" constant="178" id="OEM-Zt-fhl"/>
+                            <constraint firstItem="3Co-dA-bA2" firstAttribute="bottom" secondItem="GdP-a5-abl" secondAttribute="bottom" id="OXU-0D-SwO"/>
                             <constraint firstItem="GdP-a5-abl" firstAttribute="leading" secondItem="dkU-zh-RcV" secondAttribute="leading" constant="70" id="Scn-Yf-HFx"/>
                             <constraint firstItem="dkU-zh-RcV" firstAttribute="trailing" secondItem="GdP-a5-abl" secondAttribute="trailing" constant="70" id="azR-e3-Gx8"/>
                             <constraint firstItem="dkU-zh-RcV" firstAttribute="trailing" secondItem="OoJ-JS-An3" secondAttribute="trailing" constant="16" id="ctk-wr-17f"/>
                             <constraint firstItem="KAp-Pg-dxZ" firstAttribute="top" secondItem="GdP-a5-abl" secondAttribute="bottom" constant="27" id="dWw-bs-uzf"/>
-                            <constraint firstItem="dkU-zh-RcV" firstAttribute="trailing" secondItem="3Co-dA-bA2" secondAttribute="trailing" constant="70" id="ir5-Q7-mDZ"/>
-                            <constraint firstItem="KAp-Pg-dxZ" firstAttribute="top" secondItem="3Co-dA-bA2" secondAttribute="bottom" constant="27" id="tz7-SY-ogo"/>
+                            <constraint firstItem="3Co-dA-bA2" firstAttribute="leading" secondItem="GdP-a5-abl" secondAttribute="leading" id="u5s-sf-Vv0"/>
                             <constraint firstItem="OoJ-JS-An3" firstAttribute="leading" secondItem="dkU-zh-RcV" secondAttribute="leading" constant="16" id="yhi-FT-aCC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dkU-zh-RcV"/>
@@ -203,6 +204,7 @@
                         <outlet property="emailTextField" destination="uo4-Li-aWq" id="keK-H1-PEK"/>
                         <outlet property="nameOfBusinessTextField" destination="9Va-PZ-2gP" id="kkT-bG-tom"/>
                         <outlet property="passwordTextField" destination="4cR-cU-Jxr" id="KeY-XV-RfF"/>
+                        <outlet property="photoSignUpButton" destination="3Co-dA-bA2" id="KLM-U6-73i"/>
                         <outlet property="usernameTextField" destination="pIQ-zL-XHR" id="C5P-4d-abO"/>
                         <segue destination="UaB-bk-0Af" kind="show" identifier="toProfileVC" id="9Mr-l3-IbH"/>
                     </connections>

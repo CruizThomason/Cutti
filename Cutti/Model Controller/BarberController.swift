@@ -24,13 +24,13 @@ class BarberController {
     
     var currentBarber: Barber? 
     
-    func createBarberWith(username: String, email: String, latitude: Double, longitude: Double, password: String, completion: @escaping (_ success: Bool) -> Void) {
+    func createBarberWith(username: String, email: String, latitude: Double, longitude: Double, password: String, photoData: Data?, completion: @escaping (_ success: Bool) -> Void) {
         CKContainer.default().fetchUserRecordID { (appleUsersRecordID, error) in
             guard let appleUsersRecordID = appleUsersRecordID else { return }
             
             let appleUserRef = CKReference(recordID: appleUsersRecordID, action: .deleteSelf)
             
-            let barber = Barber(username: username, email: email, appleUserRef: appleUserRef, latitude: latitude, longitude: longitude, password: password)
+            let barber = Barber(username: username, email: email, appleUserRef: appleUserRef, latitude: latitude, longitude: longitude, password: password, photoData: photoData)
             
             let barberRecord = CKRecord(barber: barber)
             
